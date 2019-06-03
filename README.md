@@ -51,3 +51,13 @@ Binary Indexed Treeの実装。
 変更：範囲、クエリ：範囲の場合の実装。
 ### CounterBIT
 変更：要素の追加・削除、クエリ：k番目の要素の場合の実装。
+
+## segmenttree.rb
+Segment Treeの実装。
+変更が一点であるか範囲であるかの２パターン作成した。
+いずれも変更・クエリの処理に$O(\log N)$かかる。
+
+### SegmentTree
+変更が一点である場合のSegmentTree。
+### LazySegmentTree
+変更が範囲である場合のSegmentTree。遅延評価を行うことで、オーダーを減らしている。
