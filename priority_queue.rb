@@ -68,7 +68,7 @@ class PriorityQueue
   # 指定されたidが存在しないときは例外を投げる
   def change_priority!(id,new_priority)
     if !change_priority(id,new_priority)
-      raise StandardError
+      raise
     end
     return true
   end
