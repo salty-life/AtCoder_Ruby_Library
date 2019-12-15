@@ -1,5 +1,6 @@
 
-
+# 点への足し込み→範囲の和を行う
+# 値は1-indexedで与えること
 class PRBIT
   def initialize(n)
     @size=n
@@ -26,8 +27,10 @@ class PRBIT
 end
 
 
+# 範囲への足し込み→点の取得を行う
 # PRBITとして微分値を保存しておくことで、範囲足し込みを2点の操作に変更する
 # sumで積分をとることで値を得る
+# 1-indexedで指定する
 class RPBIT < PRBIT
   # [i,j]にxを足しこむ
   def add_between(i,j,x)
@@ -50,7 +53,7 @@ class RRBIT
 
   # [i,j]にxを足しこむ
   def add_between(i,j,x)
-    return if !(j<i && 0<i && i<=@size && 0<j && j<=@size)
+    return if !(i<=j && 0<i && i<=@size && 0<j && j<=@size)
     @a.add(i,x)
     @a.add(j+1,-x)
     @b.add(i,-x*(i-1))
